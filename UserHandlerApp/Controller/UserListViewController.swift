@@ -14,6 +14,7 @@ class UserListViewController: UIViewController {
     private var refreshControl = UIRefreshControl()
     
     @IBOutlet weak var userTableView: UITableView!
+    
     var users:[User] = []
     
     var selectedUser: User?
@@ -39,13 +40,14 @@ class UserListViewController: UIViewController {
         refreshControl.attributedTitle = NSAttributedString(string: "Fetching User's Profile ...", attributes: nil)
     }
     
+    //MARK: - pull to refresh user data
     @objc
     func refreshUserData(_ refresh: UIRefreshControl)  {
         loadUser()
     }
     
+    //MARK: - Fetch all user profile from firestore
     func loadUser() {
-        
         db.collection(K.FStore.collectionName)
             .addSnapshotListener { (QuerySnapshot, error) in
                 
@@ -59,7 +61,6 @@ class UserListViewController: UIViewController {
                     self.users.removeAll()
                     for i in 0 ..< documents.count {
                         let data = documents[i].data()
-                        print(data)
                         let documentID = documents[i].documentID
                         print("Document ID \(documentID)")
                         
@@ -103,6 +104,8 @@ class UserListViewController: UIViewController {
         
     }
     
+    
+    //MARK: - Check if user sig in or not
     func checkUserSignin() {
         if Auth.auth().currentUser != nil {
            print("User is signed in.")
@@ -119,6 +122,7 @@ class UserListViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.userDetailSegue {
+            //Downcast destination and prepare user data to send to UserDetailViewController
             let destination = segue.destination as! UserDetailViewController
             destination.userForModification = selectedUser
         }
@@ -126,6 +130,7 @@ class UserListViewController: UIViewController {
     }
     
 }
+
 //MARK: - UITableView Delegate & Data Source
 extension UserListViewController: UITableViewDelegate, UITableViewDataSource {
     

@@ -8,6 +8,7 @@
 
 import UIKit
 
+//MARK: - Custom cell
 class UserTableViewCell: UITableViewCell {
 
     @IBOutlet weak var lblProfileColor:UILabel?

@@ -11,10 +11,13 @@ import Firebase
 
 class SignInViewController: UIViewController {
 
+    @IBOutlet weak var btnSignIn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // Give curve to button
+        self.btnSignIn.layer.cornerRadius = 12.0
+        self.btnSignIn.clipsToBounds = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,11 +30,12 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func signInUsingFirebase(_ sender: Any) {
-        
+        // email sign in using Firebase.
         Auth.auth().signIn(withEmail: LoginUser.userEmail, password: LoginUser.userPassword) { authResult, error in
             if let e = error {
                 print(e.localizedDescription)
             } else {
+                // On success navigate to profile view.
                 self.performSegue(withIdentifier: K.profileListSegue, sender: self)
             }
         }

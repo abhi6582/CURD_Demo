@@ -12,7 +12,6 @@
 		380394E524B996970011F1D1 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380394E424B996970011F1D1 /* UserDetailViewController.swift */; };
 		38198FEA24B9A64000580688 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38198FE924B9A64000580688 /* User.swift */; };
 		38198FED24B9AB0D00580688 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38198FEC24B9AB0D00580688 /* UserTableViewCell.swift */; };
-		38198FEF24B9C54C00580688 /* CurvyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38198FEE24B9C54C00580688 /* CurvyView.swift */; };
 		385844E024B9835100B816CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385844DF24B9835100B816CB /* AppDelegate.swift */; };
 		385844E224B9835100B816CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385844E124B9835100B816CB /* SceneDelegate.swift */; };
 		385844E724B9835100B816CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385844E524B9835100B816CB /* Main.storyboard */; };
@@ -54,7 +53,6 @@
 		380394E424B996970011F1D1 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		38198FE924B9A64000580688 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		38198FEC24B9AB0D00580688 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
-		38198FEE24B9C54C00580688 /* CurvyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvyView.swift; sourceTree = "<group>"; };
 		385844DC24B9835100B816CB /* UserHandlerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserHandlerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		385844DF24B9835100B816CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		385844E124B9835100B816CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				38198FE924B9A64000580688 /* User.swift */,
-				38198FEE24B9C54C00580688 /* CurvyView.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -455,7 +452,6 @@
 			files = (
 				380394E324B996830011F1D1 /* UserListViewController.swift in Sources */,
 				380394E124B9965E0011F1D1 /* SignInViewController.swift in Sources */,
-				38198FEF24B9C54C00580688 /* CurvyView.swift in Sources */,
 				380394E524B996970011F1D1 /* UserDetailViewController.swift in Sources */,
 				385844E024B9835100B816CB /* AppDelegate.swift in Sources */,
 				38198FED24B9AB0D00580688 /* UserTableViewCell.swift in Sources */,

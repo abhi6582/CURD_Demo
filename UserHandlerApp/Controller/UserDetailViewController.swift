@@ -9,7 +9,6 @@
 import UIKit
 import Firebase
 
-
 class UserDetailViewController: UIViewController {
     let db = Firestore.firestore()
     
@@ -25,7 +24,7 @@ class UserDetailViewController: UIViewController {
     @IBOutlet weak var btnYellow: UIButton!
     
     
-    @IBOutlet weak var btnSaveOrUpdate: CurvyButton!
+    @IBOutlet weak var btnSaveOrUpdate: UIButton!
     
     var profileColor = "blue"
     
@@ -33,7 +32,9 @@ class UserDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.emailText.keyboardType = .emailAddress
+        self.btnSaveOrUpdate.layer.cornerRadius = 12.0
+        self.btnSaveOrUpdate.clipsToBounds = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,17 +45,19 @@ class UserDetailViewController: UIViewController {
         } else {
             self.title = "Edit Profile"
             self.btnSaveOrUpdate.setTitle("Update", for: .normal)
-            loadUser()
+            loadExistingUserDetails()
             
         }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
+        // after disappearing view set user var to nil for memory release.
         userForModification = nil
     }
     
-    func loadUser() {
+    // helps to load existing user data and fill details in elements
+    func loadExistingUserDetails() {
         firstNameText.text = userForModification?.firstName
         lastNameText.text = userForModification?.lastName
         emailText.text = userForModification?.email
@@ -74,8 +77,7 @@ class UserDetailViewController: UIViewController {
          
     }
     
-    
-    
+    // User can select thier profile color on button click
     @IBAction func selectProfileColor(_ sender: UIButton) {
         btnBlue.setTitle("", for: .normal)
         btnPurple.setTitle("", for: .normal)
@@ -109,6 +111,7 @@ class UserDetailViewController: UIViewController {
         
     }
     
+    //MARK: - Create or update user profile.
     @IBAction func saveUser(_ sender: UIButton) {
         // Create new profile
         if userForModification == nil {

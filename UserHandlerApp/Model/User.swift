@@ -8,6 +8,7 @@
 
 import UIKit
 
+//MARK: - User model
 struct User {
     let firbaseDocument:String
     let firstName:String
